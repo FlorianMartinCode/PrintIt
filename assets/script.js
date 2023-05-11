@@ -26,13 +26,13 @@ const bannerDescription = document.getElementById("paragraph");
 
 // Ajouter un événement de click à la flèche gauche
 leftArrow.addEventListener("click", function (event) {
-    currentSlideIndex = (currentSlideIndex + - 1);
+    currentSlideIndex = (currentSlideIndex + slides.length - 1) % slides.length; // Défilement infini grace au modulo
     updateBanner()
 });
 
 // Ajouter un événement de click à la flèche droite
 rightArrow.addEventListener("click", function (event) {
-    currentSlideIndex = (currentSlideIndex + 1);
+    currentSlideIndex = (currentSlideIndex + 1) % slides.length; // Défilement infini grace au modulo
 	updateBanner()
 });
 
